@@ -33,7 +33,7 @@ export CFNRESPONSE_LAYER_ARN=$(aws lambda publish-layer-version \
     --region $AWS_REGION \
     --query LayerVersionArn --output text)
 
-export GITHUB_TOKEN_SECRET_NAME=$(aws secretsmanager create-secret --name $STACK_NAME-git-pat \
+export GITHUB_TOKEN_SECRET_NAME=$(aws secretsmanager create-secret --name $STACK_NAME-git-pat-$UNIQUE_IDENTIFIER \
 --secret-string $GITHUB_PAT --region $AWS_REGION --query Name --output text)
 
 aws cloudformation create-stack \
