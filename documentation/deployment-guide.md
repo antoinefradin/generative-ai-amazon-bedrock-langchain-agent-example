@@ -266,6 +266,18 @@ see [Testing and Validation](../documentation/testing-and-validation.md)
 see [README](../README.md)
 
 ---
+---
+
+## MODIFICATIONS
+
+- Add unique id to the SecretManager secrets name 
+- Add a Control model access permissions policy for the Agent Role
+
+
+
+see [README](../README.md)
+
+---
 
 Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 SPDX-License-Identifier: MIT-0
