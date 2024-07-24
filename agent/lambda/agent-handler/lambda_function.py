@@ -31,6 +31,9 @@ bedrock_client = boto3_session.client(service_name="bedrock-runtime")
 def elicit_slot(session_attributes, active_contexts, intent, slot_to_elicit, message):
     """
     Constructs a response to elicit a specific Amazon Lex intent slot value from the user during conversation.
+    Intent – An intent represents an action that the user wants to perform.
+    Slot – An intent can require zero or more slots, or parameters.
+
     """
     response = {
         'sessionState': {
@@ -736,6 +739,11 @@ def dispatch(intent_request):
     slots = intent_request['sessionState']['intent']['slots']
     username = slots['UserName'] if 'UserName' in slots else None
     intent_name = intent_request['sessionState']['intent']['name']
+
+    print("##lambda_function.py --> dispatch() --> intent_request")
+    print(intent_request)
+    print("slots")
+    print(slots)
 
     if intent_name == 'VerifyIdentity':
         return verify_identity(intent_request)
